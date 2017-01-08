@@ -43,3 +43,6 @@ android/app/libs
 
 # Deco
 .deco
+
+# Env Variables
+env.js

@@ -4,14 +4,17 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-    "lint": "eslint js index.ios.js index.android.js",
+		"lint": "eslint __test__ js index.ios.js index.android.js ",
 		"test": "jest"
 	},
 	"dependencies": {
+		"dotenv": "^2.0.0",
+		"qs": "^6.3.0",
 		"react": "15.4.1",
 		"react-native": "0.39.2"
 	},
 	"devDependencies": {
+		"babel-eslint": "^7.1.1",
 		"babel-jest": "18.0.0",
 		"babel-preset-react-native": "1.9.1",
 		"eslint": "^3.13.0",
