@@ -14,6 +14,10 @@ import qs from 'qs';
 import env from '../env';
 import LoggedIn from './LoggedIn';
 
+XMLHttpRequest = GLOBAL.originalXMLHttpRequest ?
+  GLOBAL.originalXMLHttpRequest :
+  GLOBAL.XMLHttpRequest;
+
 const scopes = [
   'user',
   'repo',

@@ -8,10 +8,14 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"apollo-client": "^0.6.0",
 		"dotenv": "^2.0.0",
+		"graphql-tag": "^1.2.1",
 		"qs": "^6.3.0",
 		"react": "15.4.1",
-		"react-native": "0.39.2"
+		"react-apollo": "^0.8.1",
+		"react-native": "0.39.2",
+		"react-native-easy-grid": "^0.1.7"
 	},
 	"devDependencies": {
 		"babel-eslint": "^7.1.1",
