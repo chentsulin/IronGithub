@@ -13,6 +13,12 @@ import gql from 'graphql-tag';
 
 
 class UserScreen extends Component {
+  static route = {
+    navigationBar: {
+      visible: false,
+    },
+  };
+
   static propTypes = {
     data: PropTypes.shape({
       loading: PropTypes.bool.isRequired,
@@ -36,19 +42,25 @@ class UserScreen extends Component {
     if (loading || error) return null;
     return (
       <Grid>
-        <Row size={65} style={styles.profile}>
-          <Image
-            style={styles.avatar}
-            source={{ uri: viewer.avatarURL }}
-          />
-          <Text style={[styles.textCenter, styles.login]}>
-            {viewer.login}
-          </Text>
-          <Text style={[styles.textCenter, styles.name]}>
-            {viewer.name}
-          </Text>
+        <Row size={75} style={styles.profile}>
+          <Row size={80} style={{ alignItems: 'center' }}>
+            <Image
+              style={styles.avatar}
+              source={{ uri: viewer.avatarURL }}
+            />
+          </Row>
+          <Row size={10}>
+            <Text style={[styles.textCenter, styles.login]}>
+              {viewer.login}
+            </Text>
+          </Row>
+          <Row size={10}>
+            <Text style={[styles.textCenter, styles.name]}>
+              {viewer.name}
+            </Text>
+          </Row>
         </Row>
-        <Row size={35}>
+        <Row size={25}>
           <Col>
             <Text style={[styles.textCenter, styles.followText]}>
               <Text style={styles.followNumber}>{viewer.followers.totalCount}</Text> Followers
@@ -72,9 +84,9 @@ const styles = StyleSheet.create({
   profile: {
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   avatar: {
-    marginTop: 90,
     marginBottom: 50,
     width: 220,
     height: 220,

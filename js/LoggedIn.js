@@ -7,8 +7,12 @@ import {
 } from 'react-native';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
+import {
+  NavigationProvider,
+} from '@exponent/ex-navigation';
 
-import UserScreen from './UserScreen';
+import router from './router';
+import Main from './Main';
 
 
 const networkInterface = createNetworkInterface({
@@ -43,7 +47,9 @@ export default class LoggedIn extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <UserScreen />
+        <NavigationProvider router={router}>
+          <Main />
+        </NavigationProvider>
       </ApolloProvider>
     );
   }
